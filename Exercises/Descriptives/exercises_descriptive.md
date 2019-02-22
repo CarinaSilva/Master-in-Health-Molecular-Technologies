@@ -13,7 +13,7 @@ were distributed randomly in order to investigate if the weight (Kg)
 rose during the rst 6 months. The three groups were given dierent
 diets. The results are as follows:
 
-![](img.png)
+![](https://github.com/CarinaSilva/Master-in-Health-Molecular-Technologies/tree/master/Exercises/Descriptives7img.png)
 
 **Exercise 1** Create three different variables, which correspond to the groups
 weight. Use these to create a data.frame named Data1.
