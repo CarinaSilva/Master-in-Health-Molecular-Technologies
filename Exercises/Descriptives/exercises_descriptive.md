@@ -9,7 +9,7 @@ so that you can come back to the same session latter.
 
 +Three groups of babies with the same weight (born) approximately
 were distributed randomly in order to investigate if the weight (Kg)
-rose during the first 6 months. The three groups were given dierent
+rose during the first 6 months. The three groups were given different
 diets. The results are as follows:
 
 ![](img.png)
