@@ -266,7 +266,7 @@ use to find the critical vale for the hypothesis used? (The value at the boundar
 
 
 
-**Exercise 5**:Three groups of babies with the same weight (born) approximately were distributed randomly in order to investigate if the weight (Kg) rose during the rst 6 months. The three groups were given different diets. The results are as follows:
+**Exercise 5**:Three groups of babies with the same weight (born) approximately were distributed randomly in order to investigate if the weight (Kg) rose during the first 6 months. The three groups were given different diets. The results are as follows:
 <br/>
 
 ![](img4.png)
@@ -307,7 +307,7 @@ bartlett.test(observ,tratam)  #we need two variables
  
  
  
-**b)**These diets can be considered different at a significance level of 5%?
+**b)** These diets can be considered different at a significance level of 5%?
 
 <details><summary>Click Here to see the answer</summary><p>
  
