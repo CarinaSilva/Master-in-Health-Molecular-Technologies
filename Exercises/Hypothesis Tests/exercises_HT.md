@@ -103,7 +103,7 @@ t.test(w.women,w.men,alternative="two.sided")
 <br/>
 
 
-**c)**: Construct a 90% condence interval for the difference of means for both genders. Use this interval to test the hypothesis of the difference of mean values (mu_women- mu_men) being equal to one.
+**c)**: Construct a 90% confidence interval for the difference of means for both genders. Use this interval to test the hypothesis of the difference of mean values (mu_women- mu_men) being equal to one.
 
 <details><summary>Click Here to see the answer</summary><p>
 
