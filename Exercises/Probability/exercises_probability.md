@@ -86,8 +86,8 @@ and the Poison approximation to the binomial.
 
 
 <details><summary>Click Here to see the answer</summary><p>
+  
 ```{r}
-
 #using Binomial   X ~ Bi(60,0.02), P(X>=2)
 
 1-pbinom(1,60,0.02)
@@ -98,9 +98,8 @@ and the Poison approximation to the binomial.
 #using aproximation to Poisson X~P(60*0.02)
 
 1-ppois(1,60*0.02)
-
-
 ```
+
 </p></details>
 
 <br/>
