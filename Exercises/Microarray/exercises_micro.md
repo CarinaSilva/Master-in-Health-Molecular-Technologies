@@ -276,6 +276,7 @@ commands.
 
 
 <br/>
+
 ```{r}
 
 matplot(pm(estrogen,"1012_at"),type = "l", xlab = "Probe No.",ylab = "PM Probe intensity")
