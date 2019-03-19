@@ -12,7 +12,7 @@ The **exprSet** object:
 * Intensities summary is loaded in an **exprSet** object.
 * **phenoData** contains the covariates associates to each array and it is inherited by the objects derived from AffyBatch object.
 
-![](expr.png)
+![](expr.PNG)
 
 
 
