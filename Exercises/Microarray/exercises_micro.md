@@ -235,6 +235,7 @@ command below.
 <br/>
 
 ```{r}
+
 class(estrogen)
 slotNames(estrogen)
 estrogen
