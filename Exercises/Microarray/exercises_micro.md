@@ -260,10 +260,12 @@ and rows to individual probes on the chip.
 <br/>
 
 ```{r}
+
 par(mfrow=c(1,2))
 boxplot(pm(estrogen))
 boxplot(log2(pm(estrogen))) 
 boxplot(mm(estrogen))
+
 ```
 <br/>
 <br/>
@@ -308,6 +310,7 @@ such trends a lowess curve is added to the plots.
 <br/>
 
 ```{r}
+
 mva.pairs(pm(estrogen[,c(1,3,5,7)])) 
 
 ```
@@ -328,10 +331,12 @@ you can get from the report.RL.
 <br/>
 
 ```{r}
+
 biocLite("arrayQualityMetrics")
 library(arrayQualityMetrics)
 library(preprocessCore)
 arrayQualityMetrics(expressionset = estrogen, outdir = "QAraw", force = TRUE, do.logtransform = TRUE, intgroup = fac)
+
 ```
 <br/>
 <br/>
@@ -342,6 +347,7 @@ arrayQualityMetrics(expressionset = estrogen, outdir = "QAraw", force = TRUE, do
 <br/>
 
 ```{r}
+
 biocLite("affyPLM")
 library(affyPLM)  
 rna.deg.obj<-AffyRNAdeg(estrogen)
@@ -349,6 +355,7 @@ plotAffyRNAdeg(rna.deg.obj)  #degradation plot
 fitPLM<-fitPLM(estrogen)  # fitPLM creates an object to use on the plots RLE and
 RLE(fitPLM)
 NUSE(fitPLM)
+
 ```
 <br/>
 <br/>
@@ -369,29 +376,21 @@ jects:
 <br/>
 
 ```{r}
+
 bgcorrect.methods
 normalize.AffyBatch.methods
 pmcorrect.methods
 express.summary.stat.methods
+
 ```
 <br/>
 <br/>
 
 Compare the _rma_ and _mas_ background correction using boxplots. 
 
-<br/>
-
-```{r}
-
-```
-<br/>
-
-
 Compare the constant, invariantset, quantiles and loess normalization methods using boxplots.
 
-```{r}
 
-```
 
 <br/>
 <br/>
@@ -430,12 +429,6 @@ used, with no background correction, then invarianset normalization between arra
 summarized by using liwong.
 
 <br/>
-
-```{r}
-
-```
-
-<br/>
 <br/>
 
 
@@ -449,6 +442,7 @@ to a file for further analysis.
 
 
 ```{r}
+
 eset.rma<-rma(estrogen)   # An S4 object
 boxplot(exprs(eset.rma))  # expression levels of each array
 hist(eset.rma)
@@ -456,6 +450,7 @@ MAplot(eset.rma)  #eset.rma is an expressionset object in log2scale
 
 write.exprs(eset.rma,file="estrogenrma.txt")  # saving data in your directory
 eset.rma.data<-read.table("estrogenrma.txt")   # read data from a file
+
 ```
 
 <br/>
@@ -479,7 +474,9 @@ is desired.
 <br/>
 
 ```{r}
+
 arrayQualityMetrics(expressionset = eset.rma, outdir = "QArma",
 force = TRUE, do.logtransform = FALSE, intgroup = fac,spatial=TRUE,grouprep=TRUE)
+
 ```
 
