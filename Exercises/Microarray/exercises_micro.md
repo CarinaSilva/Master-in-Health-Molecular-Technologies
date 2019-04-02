@@ -122,7 +122,7 @@ pd
 
 
 The _pData_ function gives access to an object _phenoData_. We can choose a relevant column from the sample annotation to
-identify biological groups of interest In this case we want to use the information available for the samples. We use the function _grep_ to extract this information and store it in a separate object, _fac_.
+identify biological groups of interest. In this case we want to use the information available for the samples. We use the function _grep_ to extract this information and store it in a separate object, _fac_.
 
 
 ```{r}
@@ -464,7 +464,7 @@ getMethods("show").
 
 
 The function justRMA can be used instead of rma in cases where there
-are a large number of CEL les to process and no other low-level analysis
+are a large number of CEL files to process and no other low-level analysis
 is desired.
 
 <br/>
