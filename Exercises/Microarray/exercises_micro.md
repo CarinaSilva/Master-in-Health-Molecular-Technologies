@@ -95,8 +95,7 @@ with the appropriate information on your arrays and samples,
 to load it into a _phenoData_ object.
 
 
-Phenotypic data consists of the concentrations of RNA from two dif-
-ferent samples, along with the ID of the scanner. The function _pData_ can be used to access this information.
+Phenotypic data consists of the concentrations of RNA from two different samples, along with the ID of the scanner. The function _pData_ can be used to access this information.
 
 
 phenoData objects are where the Bioconductor stores information about
