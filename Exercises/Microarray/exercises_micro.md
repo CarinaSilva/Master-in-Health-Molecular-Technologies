@@ -158,7 +158,7 @@ estrogen
 <br/>
 
 
-**5.** Look at the CEL file images and nd if there are spatial artifacts.
+**5.** Look at the CEL file images and find if there are spatial artifacts.
 The image function allows us to look at the spatial distribution of the
 intensities on a chip.
 
