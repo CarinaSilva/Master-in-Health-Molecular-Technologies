@@ -480,3 +480,155 @@ force = TRUE, do.logtransform = FALSE, intgroup = fac,spatial=TRUE,grouprep=TRUE
 
 ```
 
+<br/>
+<br/>
+
+
+# Finding differentially expressed genes
+
+**17.** Get a ranked gene lists accordingly to FC and Welch t-statistic.
+
+
+```{r}
+biocLite("DEDS")
+library(DEDS)
+
+L<-c(0,0,1,1,0,0,1,1)
+eset.rma
+rma.mat<-as.matrix(exprs(eset.rma))
+
+#FC function
+f<-comp.FC(L,is.log=T,FUN=mean)
+f.data<-f(rma.mat)
+length(f.data)
+class(f.data)
+hist(f.data, main="log2(Fold Change)", col="cyan",xlab=)
+sum(abs(f.data)>1.5)
+
+# t-statistic
+library(genefilter)
+tt <- rowttests(eset.rma, factor(eset.rma$estrogen))
+str(eset.rma)
+
+```
+
+
+<br/>
+<br/>
+
+
+**18.** Compare the top 50 genes selected by each procedure.
+
+
+```{r}
+fc.rank<-sort(rank(-abs(f.data)))
+t.rank <- sort(rank(-abs(tt$statistic)))
+ranks <- cbind(fc.rank, t.rank)
+ranks[1:50,]
+
+```
+
+
+# Multiple Testing
+
+<br/>
+
+We are going to use the multtest R package for multiple testing, although there are several packages which have in their procedures multiple
+testing approaches.
+
+Sandrine Dudoit and colleagues implemented the R _multtest_ package,
+which is part of the Bioconductor package, to perform multiple testing analyses. See the multtest documentation.
+
+<br/>
+
+
+**19.**  Load the _multtest_ package and explore the _mt.teststat_ function. Load your data stored in your working directory, which
+correspond to the RMA preprocessed data.
+The _mt.teststat_ function calculates a test statistic (for example, the
+t-statistic or the Wilcoxon) for each row in a data frame.
+
+
+```{r}
+biocLite("multtest")
+library(multtest)
+?mt.teststat
+eset.rma<-rma(estrogen)
+
+```
+
+<br/>
+<br/>
+
+
+**20.** Compute the t-statistic and Mann-Whitney statistic and compare
+their normal QQ plots. Are the non-parametric results similar to
+those for the t-test?
+
+
+```{r}
+L<-c(0,0,1,1,0,0,1,1)
+welch_t<-mt.teststat(exprs(eset.rma),L,test="t")
+welch_t
+qqnorm(welch_t)
+qqline(welch_t)
+
+
+wilk<-mt.teststat(exprs(eset.rma),L,test="wilcoxon")
+qqnorm(wilk)
+qqline(wilk)
+
+
+```
+
+
+<br/>
+<br/>
+
+
+**21.** Calculate the unadjusted p-value corresponding to each t-statistic in the list determined earlier.
+<br/>
+
+```{r}
+raw_p_t<-2*(1-pnorm(abs(welch_t)))
+hist(raw_p_t)
+plot(sort(raw_p_t))
+
+```
+
+
+<br/>
+<br/>
+
+
+**22.** Calculate the adjusted p-values using the Bonferroni, Holm,
+and Benjamini-Hochberg methods The _mt.rawp2adjp_ function computes adjusted p-values for each raw-
+pvalue.
+<br/>
+
+```{r}
+?mt.rawp2adjp
+procs = c("Bonferroni", "Holm", "BH")
+res = mt.rawp2adjp(raw_p_t, procs)
+adjp = res$adjp[order(res$index),]
+round(adjp,3)
+
+```
+
+<br/>
+<br/>
+
+**23.** Look at the number of rejected null hypotheses at successive
+p-values from alpha = 0.05 to alpha=1, using the Bonferroni,
+Holm, and Benjamini-Hochberg procedures and compare the
+results.
+
+The _mt.reject_ function returns the number of rejected hypotheses cor-
+responding to each adjusted p-value for the multiple testing correction
+procedures you specify.
+<br/>
+
+```{r}
+mt.reject(adjp, seq(0,1, 0.05))$r
+
+```
+
