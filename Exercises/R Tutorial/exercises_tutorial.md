@@ -254,7 +254,7 @@ summary(CO2$uptake)
 
 
 **Exercise 17**:The _read.table_ function loads data from a file (either from the web or from your hard drive) and returns a data frame variable. Get the data
-from the website http://www-stat.stanford.edu/rag/stat141/exs/MAO.dat
+from the website http://www-stat.stanford.edu/~rag/stat141/exs/MAO.dat
 
 
 <details><summary>Click Here to see the answer</summary><p>
@@ -355,7 +355,7 @@ DOS C: environment, the UNIX shells, and the R, MATLAB, and Python
 programming environments.
 
 
-_script_ - A list of commands saved in a le that you can execute sequentially. In R, go to File:Open script.
+_script_ - A list of commands saved in a file that you can execute sequentially. In R, go to File:Open script.
 
 _function_ - A command that takes zero or more arguments as input and can
 return a number, vector, data frame, etc. as output. The output is called
