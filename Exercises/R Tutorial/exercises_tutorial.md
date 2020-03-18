@@ -87,7 +87,7 @@ length(xx)
 <details><summary>Click Here to see the answer</summary><p>
 
 ```{r}
-xx[4]
+xx[C(4,7)]
 
 ```
 
