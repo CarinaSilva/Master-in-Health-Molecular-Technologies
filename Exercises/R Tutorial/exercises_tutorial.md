@@ -291,7 +291,7 @@ names(MAO)
 <details><summary>Click Here to see the answer</summary><p>
 
 ```{r}
-save(file="mao.Rdata")
+save(mao,file="mao.Rdata")
 
 ```
 
