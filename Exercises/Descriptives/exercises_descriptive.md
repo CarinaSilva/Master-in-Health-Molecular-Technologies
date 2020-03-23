@@ -58,7 +58,7 @@ file.
 ```{r}
 
 pdf("bx.pdf") 
- bx<-boxplot(g1,g2,g3,names=c("g1","g2","g3"))
+ boxplot(g1,g2,g3,names=c("g1","g2","g3"))
  dev.off()
 
 ```
