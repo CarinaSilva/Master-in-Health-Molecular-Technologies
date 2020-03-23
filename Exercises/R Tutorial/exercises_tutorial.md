@@ -305,7 +305,7 @@ save(mao,file="mao.Rdata")
 <details><summary>Click Here to see the answer</summary><p>
 
 ```{r}
-attach(MAO)
+
 tapply(MAO.activity,group,mean)
 
 ```
