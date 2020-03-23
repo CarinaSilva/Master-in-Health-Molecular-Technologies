@@ -94,7 +94,7 @@ shapiro.test(w.women)
 
 shapiro.test(w.men)
 
-t.test(w.women,w.men,alternative="two.sided")
+t.test(w.women,w.men,alternative="one.sided")
 
 ```
 
