@@ -119,7 +119,7 @@ e) How many purines do you expect?
 ```{r}
 a<-dbinom(14,20,0.7)
 b<-pbinom(14,20,0.7)
-d<-pbinom(15,20,0.7)-pbinom(10,20,0.7)+dbinom(10,20,0.7)
+d<-pbinom(15,20,0.7)-pbinom(10,20,0.7)-dbinom(15,20,0.7)
 e<-mean_10<-20*0.7
 print("output",c(a,b,c,d))
 ```
