@@ -4,7 +4,7 @@
 
 ### Use function ls(package:stats) to produce the list of specific functions available.
 
-**Exercise 1**: The body temperature data set DataP4.txt contains the body temperature (Fahrenheit) and the gender of 130 volunteers, 65 men and 65 women. Answer the following question justifying the distributions considered to perform the tests.
+**Exercise 1**: The body temperature data set DataP4.xls contains the body temperature (Fahrenheit) and the gender of 130 volunteers, 65 men and 65 women. Answer the following question justifying the distributions considered to perform the tests.
 
 <br/>
 
