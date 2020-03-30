@@ -13,26 +13,26 @@
 <details><summary>Click Here to see the answer</summary><p>
 
 ```{r}
+#upload data from your folder
+#Get your data ready to analyze 
 
-a<-read.table("DataP4.txt",header=T)
-length(a[,1])  
-view(a)
+a<-as.data.frame(DataP4)
+str(a)
+a$temp<-as.numeric(a$temp)
 
-summary(a[,1])
-
-var(a[,1])
-
-cv<-var(a[,1])/mean(a[,1])*100
-
-cv
+#explore data
 
 hist(a[,1],main='Body temperature',col='pink')
-boxplot(a[,1],main='Body temperature',col='gold')
-
 qqnorm(a[,1])
-qqline(a[,1])
-shapiro.test(a[,1])
-t.test(a[,1],mu=98.6,alternative="two.sided")
+
+# get the limits of your IC
+sem<-sd(a$temp)/sqrt(length(a$temp))
+infLim<-mean(a$temp)-qnorm(0.975)*sem
+supLim<-mean(a$temp)-qnorm(0.975)*sem
+
+
+#Using a fucntion in R
+#t.test(a[,1],mu=98.6,alternative="two.sided")
 
 ```
 
@@ -62,9 +62,9 @@ summary(w.men)
 
 par(mfrow=c(1,2))
 
-hist(w.women,main='women',col='pink')
+hist(w.women,main='women',col='pink',prob=T)
 
-hist(w.men,main='men',col='blue')
+hist(w.men,main='men',col='blue',prob=T,ylim=c(0,0.6))
 
 
 
@@ -88,7 +88,11 @@ qqnorm(w.men)
 
 qqline(w.men)
 
-bartlett.test(list(w.women,w.men))
+library(car)
+
+leveneTest(temp~gender,data=a)   # Homogeneity test
+
+bartlett.test(list(w.women,w.men))   # Another homogeneity test
 
 shapiro.test(w.women)
 
@@ -112,7 +116,7 @@ t.test(w.women,w.men,alternative="two.sided",confidence=0.9)$conf.int
 
 
 
-# If "1" belongs to the CI 90%, do not reject H0.
+# If "0" belongs to the CI 90%, do not reject H0.
 
 ```
 </p></details>
