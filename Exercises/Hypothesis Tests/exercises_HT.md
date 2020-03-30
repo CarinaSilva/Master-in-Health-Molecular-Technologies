@@ -28,7 +28,7 @@ qqnorm(a[,1])
 # get the limits of your IC
 sem<-sd(a$temp)/sqrt(length(a$temp))
 infLim<-mean(a$temp)-qnorm(0.975)*sem
-supLim<-mean(a$temp)-qnorm(0.975)*sem
+supLim<-mean(a$temp)+qnorm(0.975)*sem
 
 
 #Using a fucntion in R
