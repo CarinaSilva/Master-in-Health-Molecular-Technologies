@@ -311,11 +311,16 @@ bartlett.test(observ,tratam)  #we need two variables
  
  
  
-**b)** These diets can be considered different at a significance level of 5%?
+**b)** These diets can be considered different at a significance level of 1%?
 
 <details><summary>Click Here to see the answer</summary><p>
  
 ```{r}
+
+shapiro.test(g1)
+shapiro.test(g2)
+shapiro.test(g3)
+
 
 # ANOVA - comparing means: three groups
 
