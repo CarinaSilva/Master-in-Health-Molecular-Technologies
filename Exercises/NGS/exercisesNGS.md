@@ -42,7 +42,10 @@ This serves to exemplify that most reads in current sequencing machines are like
 
 > **Exercise Sup1** 
 
-Consider the following read in the fastq format:
+Consider the following read in the fastq format and obtain the quality score:
+<br/>
+
+
 ![](fig1.png)
 
 
