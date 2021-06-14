@@ -40,6 +40,10 @@ This serves to exemplify that most reads in current sequencing machines are like
 </p></details>
 <br/>
 
+> **Exercise Sup1** 
+
+Consider the following read in the fastq format:
+
 
 
 
